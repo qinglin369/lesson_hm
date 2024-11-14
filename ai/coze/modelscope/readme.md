@@ -27,9 +27,15 @@
  模型有很多种， 达摩院/情感分析/分类/支持中文
  医疗模型/金融模型/法律模型
 
- pipeline (Task.text-classification,model=model_id)
+   pipeline (Tasks.text-classification,'damo/nlp_structbert_sentiment-classification_chinese-base')
+   pipeline 打开管道
+   选择一项任务 Tasks.text-classification 文本分类
+   选择模型 damo/nlp_structbert_sentiment-classification_chinese-base
+  
+
 
  -模型训练停止后，大模型不成长了，对新知识的理解能力有影响
+  喂一些新数据  微调  重新训练
 
 
 
