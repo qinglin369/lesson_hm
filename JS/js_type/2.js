@@ -1,17 +1,18 @@
-let obj={
-    name:"万齐磊",
+let obj1={
+    name:"大壮",
     job:"前端开发工程师",
     company:"字节"
 }
 
-obj.hometown="北京"//再加一个属性
+obj1.hometown="北京"//再加一个属性
 
-let a=1;
+let a=10;
 //拷贝
 let b=a;
-b=3;
+b=20;
 //引用式赋值
-let obj2=obj;
-obj2.name="肖青林";
-console.log(obj,obj2);
+let obj2=obj1;
+obj2.name="二壮";
+console.log(obj1)
+console.log(obj2)
 console.log(a,b);
