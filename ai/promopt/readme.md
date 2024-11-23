@@ -1,4 +1,4 @@
-# prpomopt 设计模式
+# prompt 设计模式
 
 -吴恩达 Promopt Enginerring 
 
