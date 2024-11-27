@@ -13,7 +13,7 @@
  输入节点->LLM（promopt)->多模态LLM(图片)->输出节点(组织一下)
  工作节点
 
- ![]((https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/8a921790bbbc4365813f39914eaeb848~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg6Ziz54Gr6ZSF:q75.awebp?rk3s=f64ab15b&x-expires=1733229010&x-signature=Fnp6WSeVmR9BQwKgvfcWjOtuSn4%3D))
+ ![](https://p9-xtjj-sign.byteimg.com/tos-cn-i-73owjymdk6/8a921790bbbc4365813f39914eaeb848~tplv-73owjymdk6-jj-mark-v1:0:0:0:0:5o6Y6YeR5oqA5pyv56S-5Yy6IEAg6Ziz54Gr6ZSF:q75.awebp?rk3s=f64ab15b&x-expires=1733229010&x-signature=Fnp6WSeVmR9BQwKgvfcWjOtuSn4%3D70)
 
  [百度](https://www.baidu.com)
 
