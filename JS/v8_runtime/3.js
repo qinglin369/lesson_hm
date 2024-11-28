@@ -6,5 +6,5 @@ function foo(){
     bar()
     console.log(myname);
 }
-var myname="lisi";
+console.log(myname);
 foo();

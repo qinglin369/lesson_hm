@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EditInPlace 哔哩哔哩用户体验打造</title>
+</head>
+<body>
+  <div id="app">
+    <div id="ep1">
+      <span id="content">男德学院一等奖学金获得者</span>
+      <input type="text" id="input" value="男德学院一等奖学金获得者">
+      <input type="button" id="save" value="Save">
+      <input type="button" id="cancel" value="Cancel">
+    </div>
+  </div>
+  <script>
+    //dom操作 js html 节点对象 动态操作html 
+  const content=document.getElementById('content');
+  const input=document.getElementById('input');
+  const save=document.getElementById('save');
+  const cancel=document.getElementById('cancel');
+
+  //文本状态
+  function convertToText(){
+    // content.style.display='block';
+    input.style.display='none';
+    cancel.style.display='none';
+    save.style.display='none';
+    content.style.display='inline';
+    input.focus(); // 让输入框获得焦点
+  }
+
+  //编辑状态
+  function convertToEdit(){
+    input.style.display='inline';
+    cancel.style.display='inline';
+    save.style.display='inline';
+    content.style.display='none';
+  }
+  convertToText();
+  //点击文本状态,进入编辑状态
+  content.addEventListener('click',function(){
+    convertToEdit();
+    // 输入框是最新的签名
+    input.value=content.innerText;
+  })
+  //点击保存按钮,保存编辑状态
+  save.addEventListener('click',function(){
+    // 保存编辑状态
+    content.innerText=input.value;
+    convertToText();
+  })
+ 
+  </script>
+</body>
+</html>
