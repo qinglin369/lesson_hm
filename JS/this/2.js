@@ -11,6 +11,5 @@ var a={
        }.call(a),1000)
     }
 }
-
 a.func2();
 // this.func1();这一句是普通函数调用，this指向window全局找不到func1
