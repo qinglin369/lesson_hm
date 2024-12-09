@@ -8,11 +8,10 @@
 <body>
     <button id="btn2">提前关闭setTimeout定时器</button>
 
-    <button id="btn">关闭定时器</button>
+    <button id="btn">关闭setInterval定时器</button>
     <script>
         // 不会卡这里，如果卡这就不能响应其他事件和交互，js 单线程语言
-        //异步(让同步代码先执行)
-        //1-5ms
+        //异步(让主线程先执行) 
         const btn=document.getElementById('btn')
 
         const btn2=document.getElementById('btn2')
@@ -24,16 +23,15 @@
         })
 
       const timeout=setTimeout(function(){
-          console.log('----') 
+          console.log('setTimeout触发') 
         },10000)
         //同步代码
         // while(true){
 
         // }
         const interval=setInterval(function(){
-            // console.log('qa')
+             console.log('interval触发')
         },1000)
-        console.log(123)
     </script>
     
 </body>

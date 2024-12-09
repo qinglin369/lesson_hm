@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    // 为什么要使用Symbol 
+    // 1. 保证全局唯一
+    // 2. 保证不会被覆盖
+    const wes = Symbol('wes');
+    // 同学 对象字面量
+    let name = "熊博凯"
+    const classMates = {
+        // 字符串 覆盖
+        "cy":1,
+        "cy":2,
+        [name]:"猛男",
+        // Symbol 可以作为字符串 作为key
+        [Symbol('mark')]:{grade:50,grender:'male'},
+        [Symbol('olivia')]:{grade:80,grender:'female'},
+        [Symbol('olivia')]:{grade:80,grender:'female'},
+    }
+    console.log(classMates[name],classMates.cy,classMates);
+    // 二维
+    for(let [key,val] of Object.entries(classMates)){
+        console.log(key,val);
+
+    }
+    
+    // for(const person of classMates){
+    //     console.log(person,classMates[person]);
+    // }
+    const syms = Object.getOwnPropertySymbols(classMates);
+    console.log(syms);
+
+    const data = syms.map(sym=>classMates[sym].grade);
+    console.log(data);
+    
+    //属性描述符
+    console.log(Object.getOwnPropertyDescriptors(classMates));
+   </script> 
+</body>
+</html>
