@@ -24,7 +24,7 @@
   const {
     createApp, // 创建Vue应用
     ref  // 响应式数据
-  } = Vue
+  } = Vue// 从Vue 中解构出俩个函数
 
   createApp({
     // 准备应用需要的数据
@@ -32,7 +32,7 @@
         // let count = 0 简单数据类型
         let count =ref(0) ;// 响应式对象
         console.log(Object.prototype.toString.call(count))
-        const str = ref('hello, vue')
+        const str = ref('hello vue')
         const increment = () => {
            count.value+=10
         }
