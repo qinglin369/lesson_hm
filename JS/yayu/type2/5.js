@@ -1,3 +1,4 @@
+
 let specialObj = {
     valueOf:function(){
         console.log("Calling valueOf...")
@@ -9,7 +10,7 @@ let specialObj = {
     }
 }
 
-
+console.log("第一种:")
 console.log(Number(specialObj));// 转数字，找到valueOf
 
 let objectWithoutPrimitiveValuOf = {
@@ -23,9 +24,11 @@ let objectWithoutPrimitiveValuOf = {
    }
 }
 // to Primitive
+console.log("第二种:")
 console.log(Number(objectWithoutPrimitiveValuOf))
 
 
+console.log("第三种:")
 let problemObj = {
     valueOf:function(){
      console.log("Calling valueOf...")

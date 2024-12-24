@@ -4,18 +4,18 @@ let objWithStringValue = {
     }
   }
   
-  console.log(String(objWithStringValue))
+  console.log("情况一："+String(objWithStringValue))
 
   let objWithValueOf = {
     toString: function() {
       return this
     },
     valueOf : function(){
-        return 2
+        return "hello"
     }
   }
 
-  console.log(String(objWithValueOf))
+  console.log("情况二："+String(objWithValueOf))
 
   let objWithoutPrimitive = {
     toString: function() {
@@ -26,7 +26,7 @@ let objWithStringValue = {
       }
   }
   try{
-      console.log(String(objWithoutPrimitive))
+      console.log("情况三"+String(objWithoutPrimitive))
   }catch(e){
       console.log(e)
   }
