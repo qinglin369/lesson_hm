@@ -6,15 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <h2 id="app"></h2>
+    <h2 id="app">12</h2>
     <input type="text" id="todo-input">
     <script>
         var app = document.getElementById('app');
         var todoInput = document.getElementById('todo-input');
 
-        todoInput.addEventListener('input',function(event){
+        todoInput.addEventListener('change',function(event){
             var val = event.target.value;
-            console.log(val,todoInput.value,this.value);
+            //三种获得值的方式
+            console.log(this.value)
+            // console.log(val,todoInput.value);
             app.innerHTML = val;// 修改值
 
         })
