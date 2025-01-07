@@ -15,6 +15,8 @@ const handlerClick = () => {
   comp.value.someMethod();
 }
 //   console.log(title);
+console.log(comp.value.childName);
+comp.value.someMethod();
 
 </script>
 
