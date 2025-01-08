@@ -20,7 +20,7 @@
  - export 导出
  
  UI界面和响应数据分离
- - hooks 编程风格
+ - vue hooks 编程风格
    - 函数式编程
     useMouse use 开头, hooks 函数的特征
    - 将响应式业务（状态) 和 UI 分离

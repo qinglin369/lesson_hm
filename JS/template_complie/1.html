@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>模版编译</title>
+</head>
+<body>
+<script>
+let template = '我是{{name}}, 年龄{{age}}，性别{{sex}}'
+let person = {
+  name: '嘎兰',
+  age: 12,
+  sex: '女'
+}
+// 规则 {{}} 正则 replace name person.name 
+// vue 挂载前 实例化过程 内存中 模版先编译 
+function compile(template, data) {
+  // 正则一个个字符匹配  1  第一个字符
+  // [0-9] 匹配的范围 一个字符 0-9 任何一个数字 [] 一个 0-9 -  范围
+ // ^,从字符串的开始位置匹配  
+ // 严格匹配 ^ $ 开头 结尾
+  let reg = /^1[0-9]{10}$/
+  console.log(reg.test("13312345678"))
+  // let reg = /\{\{(\w+)\}\}/
+}
+compile();
+</script>
+</body>
+</html>
