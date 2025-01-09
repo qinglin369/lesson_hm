@@ -9,9 +9,9 @@
 <script>
 let template = '我是{{name}}, 年龄{{age}}，性别{{sex}}'
 let person = {
-  name: '嘎兰',
+  name: '大壮',
   age: 12,
-  sex: '女'
+  sex: '男'
 }
 // 规则 {{}} 正则 replace name person.name 
 // vue 挂载前 实例化过程 内存中 模版先编译 
@@ -27,11 +27,14 @@ function compile(template, data) {
   let reg = /\{\{([a-z]+)\}\}/
   // 字符串上的match 
   // console.log(template.match(reg))
-  // console.log(reg.exec(template))
+   console.log(reg.exec(template)[0])
+  
   let key = reg.exec(template)[1]
   let value = data[key]
   console.log(value);
-  console.log(data["name"]);
+  // console.log(data["name"]);
+  // console.log(value===data["name"])
+
   // 正则替换 {{name}} -> value 
   console.log(template.replace(reg, value))
   // let reg = /\{\{(\w+)\}\}/

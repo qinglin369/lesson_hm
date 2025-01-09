@@ -27,7 +27,7 @@
   }
   
   onMounted(() => {
-    window.addEventListener('mousemove', mousePosHandler) 
+    window.addEventListener('mousemove', mousePosHandler)
   })
 
   onUnmounted(() => {
