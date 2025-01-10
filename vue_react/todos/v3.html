@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<h lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <h1 @click="add">{{count}}*2 = {{double}}</h1>
+        <h2>
+            {{title}}
+            <input type="text" v-model="title">
+        </h2>
+    </div>
+    <script>
+        // 组合式 api 取代选项式,ref 去做 data
+        const {ref,computed} = Vue
+        let App = {
+            setup() {
+                let title = ref ("todos")
+
+                // count 相关模块
+                let count = ref(0)
+                // 不建议写在此处，影响count 模块
+                // let title = ref("todos")
+                let double = computed(() => count.value * 2)
+                function add() {
+                    count.value++
+                }
+                return {
+                    count,
+                    double,
+                    add,
+                    title
+                }
+            }
+        }
+        Vue.createApp(App).mount('.app')
+    </script>
+</body>
+</html>

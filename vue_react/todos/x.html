@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todos</title>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.min.js"></script>
+    <style>
+       
+        .done {
+          color: gray;
+          text-decoration: line-through;
+        }
+        </style>
+</head>
+<body>
+    <!-- 挂载点，vue 作用范围 -->
+     <div class="app">
+      <!-- 用于显示待办事项描述：title -->
+        <h2></h2>
+      <!-- 输入内容，并添加到列表 -->
+        <input type="text" >
+        <ul>
+            <li v-for="todo in todos">
+                <input type="text" >
+                <!-- 样式绑定区分是否完成 -->
+                <span></span>
+            </li>
+        </ul>
+        <!-- 全选操作，如果已经全选，则取消(全不选)，否则全选 -->
+        <div>
+             全选<input type="text">
+             <!-- 计数，显示未完成的数量/总数量 -->
+            <span></span>
+        </div>
+     </div>
+     
+     <script>
+       const App = {
+        data() {
+            return {
+                //待办事项描述
+              title:"",
+              //待办事项列表
+              todos:[
+                  {title:'吃饭',done:false},
+                  {title:'睡觉',done:true}
+              ] 
+            }
+        },
+        
+       
+       }
+       Vue.createApp(App).mount('.app')
+     </script>
+</body> 
+</html>
+</body>
+</html>

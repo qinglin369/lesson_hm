@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todos</title>
+    <script src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/vue/3.2.31/vue.global.min.js"></script>
+    <style>
+        .done {
+          color: gray;
+          text-decoration: line-through;
+        }
+        </style>
+</head>
+<body>
+    <!-- 挂载点，vue 作用范围 -->
+     <div class="app">
+        <!-- 占位符，数据驱动思想 -->
+        <h2>{{title}}</h2>
+        <!-- 双向绑定 -->
+        <input type="text" v-model="title" @keydown.enter="addTodo">
+        <ul>
+            <li v-for="todo in todos">
+                <input type="checkbox" v-model="todo.done">
+                <span v-bind:class="{done:todo.done}">{{todo.title}}</span>
+            </li>
+        </ul>
+        <div>
+            <!-- 可读性不如 all -->
+            <!-- <span>{{active}}/{{todos.length}}</span> -->
+                       <!-- 全选复选框，使用 v-model 双向绑定到 allDone 计算属性 -->
+            全选<input type="checkbox" v-model="allDone">
+            <!-- 显示未完成的 todos 数量和总 todos 数量，使用 {{ }} 插值表达式 -->
+            <span>{{active}}/{{all}}</span>
+
+        </div>
+     </div>
+     
+     <script>
+       const App = {
+        data() {
+            return {
+              title:"",
+              todos:[
+                  {title:'吃饭',done:false},
+                  {title:'睡觉',done:true}
+              ] 
+            }
+        },
+                computed: {
+            // 计算属性：返回 todos 数组的长度
+            all() {
+                return this.todos.length
+            },
+            // 计算属性：返回未完成的 todos 数量
+            active() {
+                return this.todos.filter(todo => !todo.done).length
+            },
+            // 计算属性：全选状态的 get 和 set 方法
+            allDone: {
+                // get 方法：返回是否所有 todos 都已完成
+                get(){
+                    // this -> 计算属性
+                    return this.active === 0
+                },
+                // set 方法：设置所有 todos 的完成状态
+                set(val) {
+                    // 数据和界面要保持一致
+                    this.todos.forEach(todo => {todo.done = val})
+                }
+            }
+        },
+
+        methods: {
+            addTodo() {
+                this.todos.push({
+                    title:this.title,
+                    done:false
+                })
+                this.title = ''
+            }
+        },
+
+       }
+       Vue.createApp(App).mount('.app')
+     </script>
+</body> 
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+</head>
+<body>
+    <h2 id="app"></h2>
+    <input type="text" id="todo-input">
+    <script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $('#todo-input').keypress(function(event) {
+            if (event.which === 13) { // 13 is the key code for the Enter key
+                var inputValue = $('#todo-input').val();
+                console.log(inputValue);
+                // 在这里更新数据，例如将输入值显示在页面上
+                $('#app').text(inputValue);
+                // 清空输入框
+                $('#todo-input').val('');
+            }
+        });
+    </script>
+
+</body>
+</html>
