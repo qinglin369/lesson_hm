@@ -9,9 +9,11 @@ import {
 //引入样式包
 import 'element3/lib/theme-chalk/index.css'
 import router from './router'
+import { createPinia } from 'pinia'
 
 createApp(App)
 .use(router)
 .use(ElButton) // UI组件库
+.use(pinia)
 .mount('#app')
 
