@@ -1,12 +1,10 @@
 <script setup>
 
-import { RouterView } from 'vue-router';
 
 </script>
 
 <template>
   <div>
-    <el-button type="primary">主要按钮</el-button>
     <router-view />
   </div>
 </template>

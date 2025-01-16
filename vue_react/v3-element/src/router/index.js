@@ -22,12 +22,13 @@ const routes = [
          component: () => import('../pages/About.vue'),
          
          meta: {
-            title: '首页',
+            title: '关于',
             requireLogin: true,
           },
         }
     ]
   },
+
   {
     path:'/login',
     name:'login',
