@@ -29,7 +29,7 @@ npx babel demo.js -o es5.js
     已经安装 npx 找到 node_modules/.bin/babel 命令执行
     x 执行
    - @babel/core 核心的转译工作
-   - 。babelrc 配置文件 
+   - .babelrc 配置文件 
     presets 预处理 @babel/preset-env es6 => es5
     加了一个@babel/preset-react 支持jsx 语法转译
 
