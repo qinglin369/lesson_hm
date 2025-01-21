@@ -1,6 +1,6 @@
 <template>
     <div>
-
+    <p>Shopping</p>
     </div>
 </template>
 
