@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    "./src/**/*.{js,ts,vue,html}", // 确保路径匹配你的项目结构
-    
+    "./src/**/*.{js,vue,ts,html}",
   ],
   theme: {
     extend: {},

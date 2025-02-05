@@ -1,12 +1,17 @@
+
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import './assets/main.css'
-// import router from './router/index.ts'
-import './assets/tailwind.css'
-import router from './router/index' 
 import App from './App.vue'
-const app = createApp(App)
+import router from './router'
+import 'wc-waterfall'
+import { Toast } from 'vant';
+import lazy from './directives/lazy'
 
-app.use(createPinia()) // pinia启用
+
+const app = createApp(App)
+app.use(createPinia())
 app.use(router)
+app.use(Toast)
+app.directive('lazy', lazy);
 app.mount('#app')

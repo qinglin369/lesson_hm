@@ -1,8 +1,9 @@
 <template>
     <div>
       <h2>CompA</h2>
-      <p>count: {{ counterStore.count }}</p>
-      <button @click="increment">Add</button>
+      <p>count: {{counterStore.count }}</p>
+      <button @click="increment">CompA:Add</button>
+      <hr>
       <ComPSubA />
     </div>
   </template>
@@ -13,7 +14,7 @@
   // 引入中央模块
   import { useCounterStore } from '../store/counter'; 
   const counterStore = useCounterStore();
-  console.log(counterStore)
+  
   const { count, increment } = counterStore;
   
  

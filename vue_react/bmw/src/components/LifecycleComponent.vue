@@ -1,7 +1,7 @@
 <template>
     <div>
      <div>
-        <p id="count">Lifecycle Component - count{{ count }}</p>
+        <p id="count">Lifecycle Component - count:{{ count }}</p>
      </div>
     </div>
 </template>

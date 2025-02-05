@@ -9,11 +9,11 @@
 
 <script setup>
 import  { useMouse, useMemo }  from'../hooks/useMouse.js'
-import Hook from '../hooks/useMouse'
+// import Hook from '../hooks/useMouse'
 const{ x, y } = useMouse()
 useMemo()
 
-console.log(Hook)
+// console.log(Hook)
 </script>
 
 <style  scoped>
