@@ -15,6 +15,7 @@
     引入的时候 直接引入组件目录即可， 组件类的作用， 同时不用去引入 index.jsx 
   - return (JSX)  dom树的对齐， 优雅
 
+
 - 页面级别组件
   - 首页
     Home.vue 
@@ -49,16 +50,188 @@
     - 不需要注释、换行等，只要浏览器运行就好 
       文件小，压缩， 传输更快
     - 组件打包成js文件， css 打包成一个css文件 
-      性能优化 http 并发数 一个js 文件 
+      性能优化 减少http 并发数 一个js 文件 
       - 依赖关系
         - 不需要模块化
           被依赖的放在上面， 依赖的放在下面
         - 递归依赖关系
         - 打包成一个js文件
     - vite 很快 
+
+
  - 截图
    size gzip 大小 http 主动启动gzip 压缩传输的
    底层是tcp/ip 
 
    - vite 
     - 按需加载  vite-plugin-style-import
+
+  - less stylus css 预编译器
+    - 快
+    - less
+    - 变量，嵌套，混合函数
+    - module css 
+     - style.module.less
+     - 支持 声明 less -> 解析
+     - {s.index}
+
+- 移动端适配
+  rem 10rem = 宽度
+  - lib-flexible   rem 移动端适配
+    - postcss-px2rem 包 自动化px 转 rem 提高开发效率
+     - PostCss 允许开发者者使用插件来处理CSS文件， 使具备更高的可维护性，兼容性和性能。
+
+- axios 配置
+ - baseURL
+   前后端分离， 前端访问的是后端的接口， 一般都会以/api 开头
+   方便， baseURL 统一配置
+   - axios proxy
+    跨域问题 新解决方案
+- 请求、响应拦截器
+  - 统一的token 设置
+  - 统一的错误处理
+   400 401 403 404 500
+  - res 丰富的 状态码 config res ... 库的功能
+  - return res.data 直接返回数据 api一样简单
+  
+- cookie http 1.0
+ - http 协议本身是无状态的 method url 返回结果一定
+ - 小饼干 字符串
+ - key=value key2=value2
+ - kb 关键 用户身份等
+ - 请求时都会默认带上，太大的化影响httpx 性能
+ - expires
+ - domain  当下域名的cookie
+ - path 限制 cookie /api /user
+ 
+ - httpOnly 请求时带上 js 没有办法获取，更安全
+ XSS 跨域脚本攻击 黑客通过 发文， 评论，注入 获取cookie 的代码，并执行
+ 黑客使用我们cookie 访问某网站， 安全问题
+ <script> < &lt;
+ - secure  安全的cookie https 协议下才会带上
+
+  
+## 业务开发
+- NavBar组件
+
+components 公共组件
+zarm TabBar TabBar.Item activeKey itemKey
+change setActiveKey
+icon
+iconfont 定制
+showNavBar
+默认是false, 路由切换 showNavBar 为true
+伪代码 当业务复杂或不太熟悉时可用
+useLocation 拿到当前的路由， 解构出路径
+useEffect 监听 路由变化
+react hooks?
+
+useState 响应式
+useEffect 生命周期 副作用
+memo 缓存组件
+useMemo 缓存计算结果
+useCallback 缓存函数
+react-router-dom 
+useNavigate 
+useLocation
+函数式编程思想 use hooks 很方便的作用
+react-router-dom 
+BrowserRouter 
+HashRouter 
+Router 
+Routes
+ Route 组件 useNavigate useLocation 属于路由， 路由改变 更新 useEffect 依赖 观察路由变化
+
+
+CustomIcon 的组件 Icon.createFromIconfont
+
+react-router-dom useNavigate hook navigateTo('/user') 必须放到router 组件内
+
+单页应用 SPA single page application 看过去像一个页面， 移动端
+
+传统的a 标签 刷新页面 服务器重新渲染， 所有的html, 白屏 慢 体验不好
+vue/react 优化体验
+不能白屏 不要去刷新整个页面 NavBar HashRouter HistoryRouter 支持 hashChange pushState 不用a 标签， 由router 统一管理
+Routes router-view 一副牌 看到最上面一张
+react props 类型约束
+
+prop-types
+函数组件对象 propTypes 属性
+PropTypes.bool
+
+
+- CSS 亮点
+react module css
+less
+ 嵌套
+  & :
+  global 选择器用于在局部作用域的 LESS 文件中定义全局样式，使指定的 CSS 规则应用到全局范围，而不受局部作用域限制。这在模块化组件开发中非常有用。
+iconfont 性能优化(字体库，不用使用图片)
+linear-gradient 线性渐变色 代替图片
+px2rem
+
+
+
+功能需求分析
+登录、注册切换功能
+切换下面的表单 useState type login/register
+onlcick 切换 type
+type active
+useEffect + useLocation url /login /register
+
+
+- 项目用了哪些包？
+classnames 动态类名的逻辑安排
+
+- 记账产品
+ -  账单首页
+  - 时间和类型 查询
+  - 账单列表
+- 可视化账单 数据
+  eacharts 图标展示
+- CRUD(增删改查) 用户 账单
+ - jwt
+ - 跨域
+ - 文件上传
+- 我的
+
+## 用户页面的静态开发
+ - 行内样式
+  {{"":"",}}
+ - nth-of-type 会根据类型来计算
+ - align-self baseline 主轴是纵向的， 对齐子元素的宽度
+
+ - react 和 vue solt 和props.children 区别
+  - modal 组件为例  通用组件
+  - 需要强大的定制性  入驻
+    title footer props string | JSX 传入
+- content 表单 | JSX.... solt (插槽，具名插槽)
+
+## AI
+ - prompt 提效的模版
+
+## 首页 静态开发
+-  先想清楚 再入手 ai
+   了解需求的prompt 模版
+ - 用户的账单列表
+  - 所有， 按时间排序 倒序 分页
+  - 按类型查询(支出|收入)
+  - 按月份查询
+- 按日期分组
+  列表 细节， 并进行支出和的统计
+- 交互
+ - 类型的弹出
+ - 日期弹出
+ - 新增支出弹出
+ - 
+
+
+
+
+
+
+
+
+
+
+

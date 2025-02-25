@@ -1,13 +1,11 @@
 import React from'react';
+import s from'./style.module.less';
 
 
-const Home = () => {
+export default function Index() {
   return (
-    <>
-      <h1>Home</h1>
-    </>
+    <div className={s.index}>
+      <span>样式</span>
+    </div>
   )
-
 }
-
-export default Home;
