@@ -25,6 +25,22 @@ module.exports = appInfo => {
 
   }
 
+exports.sequelize = {
+  dialog: 'mysql',
+  host: 'localhost',
+  port: '3306',
+  username: 'root',
+  password: '6912683xiao',
+  database: 'zhangdan',
+  define: {
+    timestamps:false,//自动添加时间戳
+    freezeTableName: true,//禁止修改表名
+    underscored: true,//禁止驼峰命名
+  }
+
+}
+
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

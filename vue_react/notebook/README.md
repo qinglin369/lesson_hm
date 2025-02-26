@@ -261,6 +261,42 @@ classnames 动态类名的逻辑安排
   - get/post 区别
 
 
+ ## 开发流程
+  - idear 创意
+   - aigc
+  - 需求分析
+   - 用户需求
+   - 功能点
+  - 建立数据库
+   - 设计表结构
+  - 前端开发
+   - react 
+  - 后端
+   - egg.js
+  - 测试
+  - 部署上线
+
+## 代码开发风格的一部分
+- AI编程工具的使用
+ - MarsCode
+ - Cursor/ Trade
+ - prompt engineering
+ - 前端本质不是页面而是与用户的交互
+ - 多语言 低代码 快速学习
+ - 不只是项目开发前 prompt 生成项目
+ - 细节功能 喂伪代码 aigc代码更靠谱
+
+ - mysql
+  -mysql2 数据库驱动
+  - egg-sequelize orm 框架
+   不需要写sql语句 直接对象操作
+   封装了sql
+  - service 
+   - CRUD
+  - model
+    User
+
+
 
 
 
