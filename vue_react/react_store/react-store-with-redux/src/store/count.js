@@ -6,6 +6,7 @@ import { createSlice } from '@reduxjs/toolkit'
 // counter slice
 const counterSlice = createSlice({
   name: 'counter',// 切片名字， 用来区分不同的切片
+  
   initialState: {value:0},// 初始状态
   // 可以声明一些函数， 纯函数 用来修改状态 actions
   reducers: {

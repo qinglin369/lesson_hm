@@ -4,12 +4,14 @@
 // 好大， 建立子仓库 
 // count 融入
 import { configureStore } from '@reduxjs/toolkit';
-import counterSlice from './count';
+import {counterSlice} from './count';
 
 
 
 const rootReducer = {
     counter: counterSlice,
+    
+    
 };
 
 

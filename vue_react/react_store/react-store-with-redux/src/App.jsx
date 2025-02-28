@@ -32,7 +32,7 @@ const mapActionsToProps = (dispatch)=> {
 
   }
 }
-
+// 高阶组件
 export default connect(
   mapStateToProps,
   mapActionsToProps
