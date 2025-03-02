@@ -296,6 +296,80 @@ classnames 动态类名的逻辑安排
   - model
     User
 
+  - egg.js api 服务
+   - 路由
+    - http 协议
+   - controller
+     extends Controller
+     参数校验、业务逻辑...
+     返回接口需要的json 数据
+   - model
+   模型定义 table -> model
+  - service
+    数据库操作 CRUD
+  - view
+    api 服务， 后端不负责界面， react 负责界面
+  
+  - 登入注册
+   - 密码加密
+     单项加密
+     不能存明文， 单向加密
+  
+  - jwt json web token
+  {
+    id: 1,
+    username: 'admin',
+    level: 1,
+    exp: 1692543597
+  }
+   jwt sign token
+   后端签发 
+   - secret 加密 服务器端才能解开
+   - 40几位的加密串
+   前端localStorage 存token
+   axios 请求 拦截在请求头中
+   authorization: token(localStorage)
+   后端verify token -> json user 
+
+   - egg-jwt jsonwebtoken 
+
+- 登入
+  - 前端 Login 组件 submit
+  - api/login 全部的请求都在这
+   /login {username, password}
+  - utils/axios
+   - baseURL /api/login
+   - /api 后端提供的接口地址的标志， 前后端分离
+   - 不带/api, 前端路由react-router-dom 管理
+  - axios 请求 被vite 配置的server 拦截
+   proxy 解决跨域问题
+   rewrite /api 干掉了
+  - 后端提供接口，后端也可以不只提供接口， 自己的mvc 
+
+  - 修改用户slogan
+    全栈功能 前端修改表单
+    后端 Update + MVC
+  - 前后端分离
+    - 先后端
+     - 提供修改slogan接口
+      - 路由
+       restful api 一切皆资源 设计url的一种规范
+      - 
+      - 中间件 鉴权
+        拦在控制器之前 token -> verify user 挂在ctx 上 next
+      - 控制器
+      - service
+       - model 已创建
+       - orm sequelize （对象关系映射）不需要写sql语句，更简单
+        数据库操作
+       - apifox 请求模拟器
+
+
+    - 再前端
+     - 前端路由
+     - userinfo 组件
+     - api editUserInfo
+
 
 
 

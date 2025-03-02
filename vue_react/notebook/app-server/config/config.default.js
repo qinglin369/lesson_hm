@@ -24,6 +24,7 @@ module.exports = appInfo => {
     domainWhiteList: ['*']
 
   }
+  
   // 加密
   config.jwt = {
     secret: '!%^&*()_+123'

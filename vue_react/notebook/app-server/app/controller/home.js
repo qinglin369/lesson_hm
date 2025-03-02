@@ -4,7 +4,7 @@ class HomeController extends Controller {
   async index() {
     const { ctx } = this;
     const { id } = ctx.query;
-    ctx.body = `hi, egg疼 ${id}`;
+    ctx.body = `hi, egg ${id}`;
   }
 
 
