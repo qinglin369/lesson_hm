@@ -3,4 +3,6 @@ function reverseStr(str) {
     for ( const char of str){
         reversed = char + reversed;
     }
+    return reversed;
 }
+console.log(reverseStr('hello'));

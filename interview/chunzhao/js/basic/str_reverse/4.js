@@ -1,4 +1,3 @@
-
 // 高阶函数
 // 函数的参数或者返回值是函数 为高阶函数
 function reverseStr(str) {

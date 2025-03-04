@@ -9,3 +9,4 @@ function reverseStr(str) {
     // 变成字符串
     return str.split('').reverse().join('')
 }
+console.log(reverseStr('hello'));
