@@ -1,0 +1,3 @@
+- Marscode 学习源码或编程助手
+- 帮我生成代码，注释， 测试用例
+- codewars/ trae 

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>字符串截断</title>
+</head>
+<body>
+    <div class="truncate">
+        这是一个很长的文本，需要被截断并显示省略号。
+    </div>
+    <style>
+        /* 单行， overflow hidden; 不能换行 */
+        .truncate {
+            width: 200px;
+            /* 用的比较少的 ,比较高级*/
+            white-space: nowrap;/*空白符处理 */
+            overflow: hidden; 
+            text-overflow: ellipsis; /* 超出部分显示省略号 */
+        }
+    </style>
+</body>
+</html>

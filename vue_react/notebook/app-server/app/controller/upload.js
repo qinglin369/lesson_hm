@@ -12,7 +12,7 @@ class UploadController extends Controller {
       if (!decode) return
       console.log(decode);
       user_id = decode.id;
-      ctx.body = {
+      ctx.body = {  
         code: 200,
         msg: '上传成功',
         data: decode
