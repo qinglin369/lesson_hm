@@ -1,6 +1,6 @@
 <template>
   <van-tabbar v-model="active" 
-  class="shadow-black shadow-2xl opacity-90" active-color="#00ff00" >
+  class="shadow-black shadow-2xl opacity-90"  >
     <van-tabbar-item to="/assistant">
       <template #icon>
         <van-icon class="iconfont" class-prefix="icon" name="zhinengAIzhushou" />
