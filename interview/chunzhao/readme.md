@@ -50,6 +50,23 @@
  ## 性能优化
  - 十万条数据怎么渲染?
 
-## 场景题目
-- 类型判断
-
+## LLM
+- 流式输出
+ - openai 等接口 completion/chat stream:true
+ - 边生成边输出 流式输出
+ - 大模型思考时间 用户体验，流式输出更好。
+ - 大模型是基于token AIGC生成的
+   神经网络一个一个token生成的，后面的token 基于前面的的token 推理出来的。
+ - 网络层
+   HTTP 0.9
+   HTTP 1.0
+   HTTP 1.1
+   HTTP 2.0 服务器推送
+   HTTP 3.0
+   TCP/IP(可靠的 所有的数据帧到达(丢包 重传),按顺序) 区别于 UDP (数据暴， 视屏 直播 丢包)
+- 后端
+  路由
+  响应头 text/event-stream keep-alive
+  ctx.res.write(`data:${chunk}`)
+ - 前端
+  不再是一次性返回
