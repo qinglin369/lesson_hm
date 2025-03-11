@@ -370,9 +370,19 @@ classnames 动态类名的逻辑安排
      - userinfo 组件
      - api editUserInfo
 
+- bill CRUD
+ - sql 建表
+ - mvc 
+  - model
+  使用 AI 生成 prompt 基于sql, 使用egg.js sequelize 生成 model 定义
+  - controller
+  - service
+  - app.model.Bill.create() 新增
+  - app.model.Bill.update({}, { where: }) 修改
+  - app.model.Bill.destroy({})
+  - router restful /bill post /bill/:id patch /bill/:id delete
 
 
 
-
-
+  
 
