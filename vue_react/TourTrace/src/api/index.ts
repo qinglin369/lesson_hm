@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const url = 'https://api.coze.cn/open_api/v2/chat';
-const apiKey = 'pat_cTfedNkJoUs8nYc4oYZFYNm1ZLXMxQUgNNbBiOvG1BfGcBCWSPAyvjyGyX73XsgG';
+const url = ' https://api.coze.cn/v1/conversation/create';
+const apiKey = 'pat_zf2J1pn7KJVZnHZBRWw9MyVWmCHncrhK6d81BJfNy5O36sWC9fsJyS3ZEF265RKq';
 const botId = '7398905353180184614';
 
 import type { FetchDataRequest } from '../types/cozeConfig';
