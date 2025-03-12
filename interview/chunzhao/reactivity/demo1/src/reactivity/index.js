@@ -2,5 +2,6 @@
 // 了解底层
 // 优质的编程风格
 // 清单
-export { reactive } from "./reactive";
+export { reactive, shallowReactive } from "./reactive";
 export { effect } from './effect'
+export { ref } from './ref'
