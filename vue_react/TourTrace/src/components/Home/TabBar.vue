@@ -1,5 +1,5 @@
 <template>
-  <van-tabbar v-model="active" 
+   <van-tabbar v-model="active"
   class="shadow-black shadow-2xl opacity-90"  >
     <van-tabbar-item to="/assistant">
       <template #icon>
