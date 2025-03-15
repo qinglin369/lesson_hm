@@ -21,7 +21,6 @@ const handleClick = () => {
     const result = comp.value.someMethod();
     someMethod.value = result;
     childName.value = comp.value.childName;
-
 }
 </script>
 

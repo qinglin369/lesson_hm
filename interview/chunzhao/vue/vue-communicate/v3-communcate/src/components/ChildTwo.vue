@@ -1,6 +1,7 @@
 <template>
     <div>
         ChildTwo:{{ msg2 }}
+        {{ todolist }}
     </div>
 </template>
 
