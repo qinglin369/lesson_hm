@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Cross-Origin</title>
+</head>
+<body>
+  <script>
+    // html5 webscokrt 新特性 双向通信
+    // http:// ws:// 
+    // 
+  const ws = new WebSocket('ws://localhost:8000/ws');
+  ws.onopen = function() {
+   console.log('Connection opened');
+   ws.send('Hello, WebSocket!'); 
+  }
+  ws.onmessage = (event) => {
+    console.log('Received message:', event.data);
+  }
+  </script>  
+</body>
+</html>
