@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
-import { useProductStore } from './store/product';
+// import { onMounted } from 'vue';
+// import { useProductStore } from './store/product';
 import ProductList from './components/ProductList.vue';
 import ShoppingCart from './components/ShoppingCart.vue';
 // const productsStore = useProductStore();

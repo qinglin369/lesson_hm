@@ -3,6 +3,7 @@
       <div v-for="product in products" :key="product.id" class="product-card">
         <h3>{{ product.title }}</h3>
         <p class="price">¥{{ product.price.toFixed(2) }}</p>
+         <!-- 保留两位小数 -->
         <p class="inventory">
           库存: {{ product.inventory - cartStore.getQuantity(product.id) }}
         </p>
