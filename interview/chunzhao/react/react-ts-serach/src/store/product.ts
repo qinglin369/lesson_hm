@@ -4,6 +4,7 @@ import type { Product } from "@/types/Product";
 interface ProductStore {
   products: Product[];
   setProducts: (products: Product[]) => void;
+  
 }
 
 export const useProductStore = create<ProductStore>((set) => ({

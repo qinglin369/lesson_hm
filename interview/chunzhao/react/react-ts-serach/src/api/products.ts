@@ -10,3 +10,10 @@ export const getProducts = async () => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   return _products;
 };
+
+export const searchProductByQuary = async(query:string) => {
+ await new Promise((resolve) => setTimeout(resolve, 1000));
+ return _products.filter(product =>
+   product.title.toLocaleLowerCase().includes(query.toLocaleLowerCase())
+ );
+}
