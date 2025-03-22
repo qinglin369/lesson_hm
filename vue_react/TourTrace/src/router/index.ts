@@ -34,8 +34,21 @@ const rootRoutes:RouteRecordRaw[] = [
         title: '商城',
         cache:true
     },
-    component: () => import('@/views/Shop/Shopping.vue')
+    component: () => import('@/views/Shop/Shopping.vue'),
   },
+  {
+    
+      path:'shoppcart',
+      name: 'ShopCart',
+      meta:{
+          title: '购物车',
+          cache:true
+      },
+      component: () => import('@/views/Shop/shoppcart.vue')
+    
+  },
+
+
   {
     path:'mine',
     name: 'Mine',

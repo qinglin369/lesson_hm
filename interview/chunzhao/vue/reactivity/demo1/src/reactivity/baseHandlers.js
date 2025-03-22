@@ -37,6 +37,7 @@ function createSetter() {
 
 const get = createGetter();
 const set = createSetter();
+
 const shallowReactiveGet = createGetter(true);
 
 export const mutableHandlers = {

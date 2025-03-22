@@ -1,0 +1,17 @@
+{
+  "name": "ai_search",
+  "version": "1.0.0",
+  "description": "vue \"vue 最佳实践\"\r select like 模糊查询\r \"\r - AI 搜索  自然语义搜索(文字变成数学，数学就可以计算)\r  \"晚饭\" 文字匹配(like查询不行)\r  \"今晚吃什么\"\r  \"晚饭去哪吃\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "openai": "^4.89.0",
+    "punycode": "^2.3.1"
+  }
+}

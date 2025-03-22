@@ -1,19 +1,21 @@
 <template>
-    <div>
-      <!-- 使用 keep-alive 包裹 router-view 以实现页面缓存 -->
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
-      <div class="footer h-12">
-        <TabBar class="fixed bottom-0"></TabBar>
-      </div>
+  <div>
+    <!-- 使用插槽属性获取要渲染的组件 -->
+    <router-view v-slot="{ Component }">
+      <KeepAlive>
+        <component :is="Component" />
+      </KeepAlive>
+    </router-view>
+    <div class="footer h-12">
+      <TabBar class="fixed bottom-0"></TabBar>
     </div>
-  </template>
-  
-  <script setup lang="ts">
-  import TabBar from '../components/Home/TabBar.vue';
-  </script>
-  
-  <style scoped>
-  
-  </style>
+  </div>
+</template>
+
+<script setup lang="ts">
+import TabBar from '../components/Home/TabBar.vue';
+</script>
+
+<style scoped>
+
+</style>

@@ -57,6 +57,7 @@ export const useHomeStore = defineStore('home', () => {
             type: "热门精选",
             img:
                 "https://img1.baidu.com/it/u=909356894,57412164&fm=253&fmt=auto&app=120&f=JPEG?w=627&h=418",
+                
         },
         {
             area: "江西",

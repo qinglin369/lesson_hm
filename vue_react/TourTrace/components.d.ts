@@ -9,9 +9,12 @@ declare module 'vue' {
   export interface GlobalComponents {
     AIReply: typeof import('./src/components/AI/AIReply.vue')['default']
     PopularDestinationsCard: typeof import('./src/components/Home/PopularDestinationsCard.vue')['default']
+    ProductList: typeof import('./src/components/Shopping-Cart/ProductList.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ShareTourTraceCard: typeof import('./src/components/Home/ShareTourTraceCard.vue')['default']
+    Shop: typeof import('./src/components/Shop/shop.vue')['default']
+    Shoppingcart: typeof import('./src/components/Shopping-Cart/shoppingcart.vue')['default']
     Start: typeof import('./src/components/Assistant/Start.vue')['default']
     TabBar: typeof import('./src/components/Home/TabBar.vue')['default']
     Test: typeof import('./src/components/Home/test.vue')['default']
