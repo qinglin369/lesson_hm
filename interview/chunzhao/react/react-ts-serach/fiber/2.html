@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>requestAnimationFrame</title>
+  <style>
+  .progress-bar {
+    background-color: green;
+    height: 50px; 
+    width: 0;  
+  }
+  
+  </style>
+</head>
+<body>
+  <div id="box" class="progress-bar"></div>
+  <button id="start">开始动画</button>
+  <script>
+ <!-- ... existing code ... -->
+
+  let btn = document.getElementById('start')
+  let box = document.getElementById('box')
+  let timer = null;
+
+  const progress = () => {
+    box.style.width = (parseInt(box.style.width) || 0) + 1 + 'px';
+  };
+
+  btn.addEventListener('click', () => {
+    
+    box.style.width = '0px';
+    if (timer) {
+      clearInterval(timer);
+    }
+    timer = setInterval(progress, 16.67); // 约 60 FPS
+  });
+
+  </script>
+</body>
+</html>

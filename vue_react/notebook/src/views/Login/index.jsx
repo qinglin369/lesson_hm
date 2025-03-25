@@ -10,7 +10,7 @@ import {
   Input,
   Button,
   Checkbox,
-  Toast
+  Toast,
 } from 'zarm';
 import s from './style.module.less'
 import cx from 'classnames';

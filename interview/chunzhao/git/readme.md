@@ -13,7 +13,7 @@
 - git stash
  暂时保存代码，但是不提交到仓库
  - git stash list 查看保存的代码
-- git checkout main
+- git checkout main  分支的更改合并到当前所在的分支
  ......
 - git stash pop 恢复代码
 

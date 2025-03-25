@@ -9,10 +9,18 @@
     margin: 0;
     padding: 0;
   }
+   body {
+      height: 300px;
+     position:relative
+  }
   .container {
     border: 2px solid #000;
     padding: 10px;
     overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 偏移自身宽高的一半实现居中 */
   }
   .float-left {
     float: left; /*Formating context*/

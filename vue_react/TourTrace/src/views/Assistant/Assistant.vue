@@ -28,6 +28,7 @@
             :is="item.type == 1 ? AIReply : UserQuery"
             :msg="item.content"
           />
+          
         </div>
       </div>
       <!-- 底部提问栏 -->

@@ -12,16 +12,16 @@
   <script>
   //函数， url,  GET  新的API 基于promise 
   // js 主动发起http 请求 fetch XMLHttpRequest 
-  // 
+  // fetch 是一个新的 Web API
   fetch('https://api.github.com/orgs/lemoncode/members')
-    .then(res => res.json()) // JSON 异步
-    .then(data => { 
+    .then(res => res.json()) // JSON 异步 返回promise
+    .then(data => { // 把解析的值传递给回调函数
       // console.log(data)
       document.getElementById('members').innerHTML = data.map(member => `
       <li>
         <a href="${member.html_url}">${member.login}</a>
       </li>
-      `)
+      `).join('')
     })
   </script>
 </body>

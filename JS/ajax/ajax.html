@@ -12,7 +12,7 @@
     <script>
         const oUL = document.getElementById('membersList');
         // fetch ? js 主动拉取数据的方式
-        // fetch 的前辈 XMLHttpRequest
+        // fetch 的前辈 浏览器的内置对象XMLHttpRequest,用来进行异步的http请求
         const xhr = new XMLHttpRequest();
         
         xhr.open('GET','https://api.github.com/orgs/lemoncode/members',false);

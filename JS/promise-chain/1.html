@@ -40,6 +40,7 @@ function getAuthorByPost(post) {
       const authorDetail = authors.find(author => author.name === post.author);
       if (authorDetail) {
         post.author = authorDetail
+        // 将更新后的 post 对象作为结果传递出去
         resolve(post)
       } else {
         reject(Error('Author not found '))
