@@ -71,3 +71,11 @@
   ctx.res.write(`data:${chunk}`)
  - 前端
   不再是一次性返回
+
+## git
+
+
+- 甘总 -> 财哥
+ rag + cursor + dify(agent)
+ AI  产品观念 
+- 
