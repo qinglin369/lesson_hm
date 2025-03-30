@@ -15,6 +15,7 @@ module.exports = appInfo => {
 
   // add your middleware config here
   config.middleware = [];
+  
   // 安全性
   config.security = {
     csrf: {

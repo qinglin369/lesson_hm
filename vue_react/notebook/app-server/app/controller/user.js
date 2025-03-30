@@ -62,8 +62,9 @@ class UserController extends Controller {
 
 
 
+  // 登入
   async login() {
-    // 参数
+    // 校验参数
     const { ctx, app } = this;
     const { username, password } = ctx.request.body;
     console.log(username, password, '---------------');
@@ -75,7 +76,8 @@ class UserController extends Controller {
       }
       return;
     }
-
+    
+    //校验用户名
     const userInfo = await ctx.service.user.getUserByName(username)
     if (!userInfo || !userInfo.id) {
       ctx.body = {
@@ -86,6 +88,7 @@ class UserController extends Controller {
       return
     }
 
+    // 校验密码
     const isPasswordValid = await bcrypt.compare(password, userInfo.password)
 
     if (userInfo && !isPasswordValid) {
@@ -114,6 +117,9 @@ class UserController extends Controller {
     }
   }
   
+
+
+  // 编辑签名
   async editSignature() {
     const { ctx } = this;
     console.log(ctx.user, '?????/')
