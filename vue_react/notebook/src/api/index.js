@@ -8,6 +8,11 @@ export const login = async (username, password) =>
     password
   })
 
+  export const register = async (username, password) => 
+    await axios.post('/register', {
+      username,
+      password
+    })
 export const uploadAvatar = async () => await axios.post('/upload')
 export const getUserInfo = async () => await axios.get('/user/getUserInfo')
 export const updateSignature = async (signature) => await axios.patch('/user/signature', {
