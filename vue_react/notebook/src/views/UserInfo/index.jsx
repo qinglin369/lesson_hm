@@ -20,20 +20,31 @@ const UserInfo = () => {
   const [signature, setSignature] = useState('')
   const [avatar, setAvatar] = useState('')
   const [uploading, setUploading] = useState(false)
+  const username = localStorage.getItem('username') || '';
+  const storedUserInfo = localStorage.getItem('userInfo');
 
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const { data } = await getUserInfo();
-        setUser(data);
-        setSignature(data.signature || '');
-        setAvatar(data.avatar || '');
+        // 优先使用 localStorage 中的用户信息
+        if (storedUserInfo) {
+          const userInfo = JSON.parse(storedUserInfo);
+          setUser(userInfo);
+          setSignature(userInfo.signature || '');
+          setAvatar(userInfo.avatar || '');
+        } else {
+          const { data } = await getUserInfo();
+          setUser(data);
+          setSignature(data.signature || '');
+          setAvatar(data.avatar || '');
+          localStorage.setItem('userInfo', JSON.stringify(data));
+        }
       } catch (err) {
         Toast.show('获取用户信息失败');
       }
     };
     fetchUserInfo();
-  }, []);
+  }, [storedUserInfo]);
 
   // 获取用户信息
   // const getUserInfo = async () => {
@@ -77,9 +88,10 @@ const UserInfo = () => {
       await Promise.all(uploadPromises);
       Toast.show('头像上传成功');
       
-      // 获取新的头像URL
+      // 获取新的用户信息并更新 localStorage
       const { data } = await getUserInfo();
       setAvatar(data.avatar);
+      localStorage.setItem('userInfo', JSON.stringify(data));
     } catch (err) {
       Toast.show(err.message || '上传失败');
     } finally {
@@ -87,30 +99,12 @@ const UserInfo = () => {
     }
   };
 
-  // const handleSelect = (file) => {
-  //   console.log('file.file', file.file)
-  //   if (file && file.file.size > 200 * 1024) {
-  //     Toast.show('上传头像不得超过 200 KB！！')
-  //     return
-  //   }
-  //   let formData = new FormData()
-  //   formData.append('file', file.file)
-  //   axios({
-  //     method: 'post',
-  //     url: `/api/upload`,
-  //     data: formData,
-  //     headers: {
-  //       'Content-Type': 'multipart/form-data',
-  //       'Authorization': token
-  //     }
-  //   }).then(res => {
-  //     // setAvatar(imgUrlTrans(res.data))
-  //   })
-  // }
-
   const save = async () => {
     try {
       await updateSignature(signature);
+      // 更新 localStorage 中的用户信息
+      const updatedUserInfo = { ...user, signature };
+      localStorage.setItem('userInfo', JSON.stringify(updatedUserInfo));
       Toast.show('修改成功');
       navigate('/user');
     } catch (err) {
@@ -147,7 +141,7 @@ const UserInfo = () => {
           <Input
             disabled
             type="text"
-            value={user.username || ''}
+            value={username}
             placeholder="用户名"
           />
         </div>

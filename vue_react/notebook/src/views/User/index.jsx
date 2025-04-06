@@ -8,32 +8,46 @@ import { getUserInfo } from '@/api'
 
 const User = () => {
   const navigate = useNavigate()
+  const storedUserInfo = localStorage.getItem('userInfo');
   const [user, setUser] = useState({
-    username: '',
+    username: localStorage.getItem('username') || '',
     signature: '',
     avatar: ''
   })
 
   const logout = () => {
     localStorage.removeItem('token')
+    localStorage.removeItem('username')
+    localStorage.removeItem('userInfo')
     navigate('/login')
   }
 
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const { data } = await getUserInfo();
-        setUser({
-          username: data.username,
-          signature: data.signature || '这个家伙很懒，什么都没有留下',
-          avatar: data.avatar || '//s.yezgea02.com/1616032174786/cryptocurrency.png'
-        });
+        // 优先使用 localStorage 中的用户信息
+        if (storedUserInfo) {
+          const userInfo = JSON.parse(storedUserInfo);
+          setUser(prev => ({
+            ...prev,
+            signature: userInfo.signature || '这个家伙很懒，什么都没有留下',
+            avatar: userInfo.avatar || '//s.yezgea02.com/1616032174786/cryptocurrency.png'
+          }));
+        } else {
+          const { data } = await getUserInfo();
+          setUser(prev => ({
+            ...prev,
+            signature: data.signature || '这个家伙很懒，什么都没有留下',
+            avatar: data.avatar || '//s.yezgea02.com/1616032174786/cryptocurrency.png'
+          }));
+          localStorage.setItem('userInfo', JSON.stringify(data));
+        }
       } catch (err) {
         console.error('获取用户信息失败:', err);
       }
     };
     fetchUserInfo();
-  }, []);
+  }, [storedUserInfo]);
 
   return (
     <div className={s.user}>

@@ -15,7 +15,7 @@ import {
 import s from './style.module.less'
 import cx from 'classnames';
 import CustomIcon from '@/components/CustomIcon';
-import { login, register } from '@/api';
+import { login, register, getUserInfo } from '@/api';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -40,14 +40,18 @@ const Login = () => {
     try {
       if (type == 'login') {
         const { data } = await login(username, password);
-        console.log(data);
         localStorage.setItem('token', data.token);
+        localStorage.setItem('username', username);
+        
+        // 获取用户信息并保存
+        const userInfo = await getUserInfo();
+        localStorage.setItem('userInfo', JSON.stringify(userInfo.data));
+        
         Toast.show('登录成功');
         navigate('/userinfo');
       }
       if (type == 'register') {
         const { data } = await register(username, password);
-        console.log(data);
         Toast.show('注册成功，请登录');
         setType('login');
       }
