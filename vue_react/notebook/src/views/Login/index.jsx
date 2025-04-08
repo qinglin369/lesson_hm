@@ -13,7 +13,7 @@ import {
   Toast,
 } from 'zarm';
 import s from './style.module.less'
-import cx from 'classnames';
+import cx from 'classnames';// 用于合并 className，动态生成 className
 import CustomIcon from '@/components/CustomIcon';
 import { login, register, getUserInfo } from '@/api';
 import { useNavigate } from 'react-router-dom';

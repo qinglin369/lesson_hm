@@ -1,0 +1,138 @@
+.data {
+  min-height: 100%;
+  background-color: #f5f5f5;
+  
+  .header {
+    background-color: #007fff;
+    color: #fff;
+    padding: 20px;
+    
+    .date {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      .dateText {
+        font-size: 16px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+
+  .content {
+    padding: 10px;
+    
+    .total {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 10px;
+      
+      .time {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        
+        .title {
+          font-size: 14px;
+          
+          .expense {
+            margin-right: 10px;
+            color: #007fff;
+            cursor: pointer;
+            
+            &.active {
+              font-weight: bold;
+            }
+          }
+          
+          .income {
+            color: #4cb017;
+            cursor: pointer;
+            
+            &.active {
+              font-weight: bold;
+            }
+          }
+          
+          .icon {
+            font-size: 12px;
+            margin-left: 4px;
+          }
+        }
+      }
+
+      .chartSwitch {
+        margin: 15px 0;
+        
+        :global {
+          .za-tabs__header {
+            background-color: #f5f5f5;
+            border-radius: 20px;
+            padding: 3px;
+          }
+          
+          .za-tabs__tab {
+            font-size: 14px;
+            
+            &--active {
+              background-color: #007fff;
+              border-radius: 20px;
+              color: #fff;
+            }
+          }
+        }
+      }
+
+      .chart {
+        .type {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 5px;
+          
+          .name {
+            font-size: 14px;
+          }
+          
+          .percent {
+            font-size: 12px;
+            color: #999;
+          }
+        }
+        
+        :global {
+          .za-cell {
+            padding: 10px 0;
+          }
+          .za-cell__title {
+            padding: 0;
+            line-height: 1.2;
+          }
+          .za-cell__description {
+            padding: 0;
+            margin-top: 5px;
+          }
+          .za-progress {
+            height: 6px;
+            background: #f5f5f5;
+          }
+        }
+
+        .pieChart {
+          margin-top: 20px;
+          
+          :global {
+            .echarts-for-react {
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
