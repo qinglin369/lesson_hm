@@ -17,6 +17,7 @@
   <script>
     //dom操作 js html 节点对象 动态操作html 
   const content=document.getElementById('content');
+
   const input=document.getElementById('input');
   const save=document.getElementById('save');
   const cancel=document.getElementById('cancel');
@@ -49,6 +50,11 @@
   save.addEventListener('click',function(){
     // 保存编辑状态
     content.innerText=input.value;
+    convertToText();
+  })
+
+  //点击取消按钮,取消编辑状态
+  cancel.addEventListener('click',function(){
     convertToText();
   })
  

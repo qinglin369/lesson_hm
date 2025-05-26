@@ -19,11 +19,14 @@ function createGetter(shallow = false) {
     return res;
   }
 }
+
 function createSetter() {
   return function set(target, key, value, receiver) {
     console.log('--------------', target, key);
     // Reflect.set == target[key] = value
+    // 赋新值
     const result = Reflect.set(target, key, value, receiver);
+    // 触发依赖执行
     trigger(target, "set", key);
     return result
   }

@@ -8,7 +8,7 @@ export function effect(fn) {
   const effectFn = () => {
     try {
       activeEffect = effectFn
-      return fn() // 依赖得以收集
+      return fn() // 执行副作用
     } finally {
       activeEffect = null;
     }
@@ -39,6 +39,7 @@ export function track(target, type, key) {
   depsMap.set(key, deps);
 }
 
+
 export function trigger(target, type, key) {
   const depsMap = targetMap.get(target);
   if (!depsMap) {
@@ -52,3 +53,28 @@ export function trigger(target, type, key) {
     effectFn()
   })
 }
+
+
+// 关于Set和Map的选择：
+// Map 确实能避免键的重复。当你向 Map 里设置一个已存在的键时，新的值会覆盖旧的值。不过，Map 是键值对结构，
+// 设计目的是存储键和对应的值，而 Set 仅用于存储唯一的值，没有值与之关联。
+
+
+// 在依赖收集场景下，每个属性的依赖函数只需记录一次，不需要额外的值与之关联，
+// 使用 Set 更符合需求，代码也更简洁。若使用 Map 存储依赖函数，就需要为每个函数设置一个无意义的值
+// 使用 Map 存储依赖函数
+
+
+// const depsMap = new Map();
+// const effectFn = () => {};
+// // 需要为函数设置一个无意义的值
+// depsMap.set(effectFn, true);
+
+
+// 而使用 Set 则更简洁：
+// javascript
+// Apply
+// // 使用 Set 存储依赖函数
+// const depsSet = new Set();
+// const effectFn = () => {};
+// depsSet.add(effectFn);

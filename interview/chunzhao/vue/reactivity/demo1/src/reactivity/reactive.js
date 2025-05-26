@@ -6,6 +6,7 @@ import {
 // 依赖地图  Map es6 新增的数据结构 HashMap O(1) key 取 value 
 // get set has ....  json 区别 key 只能是字符串， map 可以是对象
 export const reactiveMap = new WeakMap(); // 全局依赖
+
 export const shallowReactiveMap = new WeakMap() // 浅依赖
 // 垃圾回收 弱引用
 // 大型项目  响应式对象很多， 但是 reactiveMap 只有一个 性能？
@@ -34,6 +35,9 @@ function createReactiveObject(target, proxyMap, proxyHandlers) {
   }
  // proxyHandlers 包含了各种拦截器（trap）的对象，用于定义代理对象的行为
   // 如果不存在， 创建代理对象
+
+  //Proxy 对象为 target 对象创建了一个代理对象 proxy，并使用 proxyHandlers 定义代理对象的拦截行为。
+  // 后续对 proxy 对象的操作会经过拦截器处理，从而实现响应式数据的功能
   const proxy = new Proxy(target, proxyHandlers);
   proxyMap.set(target, proxy);
   return proxy;

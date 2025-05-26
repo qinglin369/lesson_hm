@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用 EditInPlace</title>
+</head>
+<body>
+  <!-- 定义一个父容器 -->
+  <div id="app"></div>
+
+  <!-- 引入 editInPlace.js 文件 -->
+  <script src="./editInPlace.js"></script>
+
+  <script>
+    // 获取父容器元素
+    const app = document.getElementById('app');
+
+    // 实例化 EditInPlace 对象
+    new EditInPlace('ep1', app, '初始文本 1');
+    new EditInPlace('ep2', app, '初始文本 2');
+    // 不指定父节点，默认使用 document.body
+    new EditInPlace('ep3', null, '初始文本 3'); 
+  </script>
+</body>
+</html>
